@@ -1,8 +1,9 @@
 const express = require('express')
+const cors = require('cors');
 //conexão com o BD
 const connection = require('./database/connection')
 
-const routes = express.Router()
+const routes = express.Router().use(cors());
 
 const OngController = require('./controllers/OngController')
 const IncidentController = require('./controllers/IncidentController')
@@ -24,5 +25,6 @@ routes.get('/profile', ProfileController.index)
 
 //rota para login
 routes.post('/sessions', SessionController.create)
+
 //exportando as rotas
 module.exports = routes

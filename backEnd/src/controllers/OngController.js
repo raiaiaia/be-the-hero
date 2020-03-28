@@ -31,7 +31,7 @@ module.exports = {
             uf
         })
         //console.log({name, email, whatsapp, city, uf})
-        
+       
         return res.json({id})
      
     }
